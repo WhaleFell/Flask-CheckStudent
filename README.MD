@@ -1,4 +1,5 @@
 # Flask-CheckStudent (大沥高中查人系统)
+> 本 `base` 分支是 Flask 应用的基础框架！！ 
 ## 说明
 1. 本程序基于 `Flask` 框架制作
 2. 完善的项目结构.
