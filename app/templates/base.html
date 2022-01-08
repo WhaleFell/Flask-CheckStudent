@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- 引入 mdui -->
+    <link rel="stylesheet" href="https://cdn.w3cbus.com/library/mdui/1.0.2/css/mdui.min.css"/>
+    <script src="https://cdn.w3cbus.com/library/mdui/1.0.2/js/mdui.min.js"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 引入 layui.css -->
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+
+    <!-- 引入 layui.js -->
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+</head>
+<body class="mdui-appbar-with-toolbar">
+<!-- 应用栏 -->
+<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
+    <div class="mdui-toolbar mdui-color-indigo">
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <a href="javascript:;" class="mdui-typo-headline">落落の实验室</a>
+        <a href="javascript:;" class="mdui-typo-title">
+            {% block appbar_title %}{% endblock %}
+        </a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!-- 搜索按钮 -->
+        <div class="mdui-textfield mdui-textfield-expandable">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input" type="text" placeholder="Search"/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">close</i>
+            </button>
+        </div>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+    </div>
+</div>
+<!-- 应用抽屉 -->
+<div class="mdui-drawer mdui-drawer-close" id="left-drawer">
+    <ul class="mdui-list">
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
+            <div class="mdui-list-item-content">Inbox</div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
+            <div class="mdui-list-item-content">Starred</div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">send</i>
+            <div class="mdui-list-item-content">Sent mail</div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">drafts</i>
+            <div class="mdui-list-item-content">Drafts</div>
+        </li>
+        <li class="mdui-subheader">Subheader</li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
+            <div class="mdui-list-item-content">All mail</div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">delete</i>
+            <div class="mdui-list-item-content">Trash</div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+            <div class="mdui-list-item-content">Spam</div>
+        </li>
+    </ul>
+</div>
+
+<div class="mdui-container-fluid">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+
+{% block js %}{% endblock %}
+
+</html>

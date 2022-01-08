@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}落落の实验室{% endblock %}
+{% block appbar_title %}首页{% endblock %}
+{% block content %}
+    <!-- 应用卡片 -->
+    <div class="mdui-card mdui-col-sm-6 mdui-col-sm-6">
+        <div class="mdui-card-media">
+            <img src="../static/dali.jpg" class="mdui-img-fluid" height="60%" width="60%"/>
+            <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary-title">
+                    <b style="color:black;">大沥高中查人系统</b>
+                </div>
+                <div class="mdui-card-primary-subtitle">
+                    <span style="color:black;">专为班长打造</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="mdui-card-actions">
+            <a class="mdui-btn mdui-ripple" href="{{ url_for('dali.dali_index') }}" target="_blank">进入</a>
+        </div>
+    </div>
+    <div class="mdui-card mdui-col-sm-6 mdui-col-sm-6">
+        <div class="mdui-card-media">
+            <img src="../static/dali.jpg" class="mdui-img-fluid" height="60%" width="60%"/>
+            <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary-title">
+                    <b style="color:black;">大沥高中查人系统</b>
+                </div>
+                <div class="mdui-card-primary-subtitle">
+                    <span style="color:black;">专为班长打造</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="mdui-card-actions">
+            <a class="mdui-btn mdui-ripple" href="{{ url_for('dali.dali_index') }}" target="_blank">进入</a>
+        </div>
+    </div>
+{% endblock %}
+
+
+
