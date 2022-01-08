@@ -9,6 +9,7 @@ import os
 import platform
 from datetime import timedelta
 from pathlib import Path
+from sqlmodel import create_engine
 
 basedir = os.path.abspath(os.path.dirname(__file__))  # 项目的绝对目录
 

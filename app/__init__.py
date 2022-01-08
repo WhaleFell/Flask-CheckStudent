@@ -8,6 +8,7 @@
 from flask import Flask
 from flask_login import LoginManager
 from config import config
+from sqlmodel import create_engine,SQLModel
 
 # 实例化一个登录组件
 login_manager = LoginManager()
@@ -24,8 +25,10 @@ def create_app(config_name):
     config[config_name].init_app(app)  # 调用静态方法初始化组件
 
     # 注册组件
-    from app import models
     login_manager.init_app(app)  # 登录组件
+    # 数据库
+    from app import models
+    app.config['engine'] = create_engine(config[config_name].SQLALCHEMY_DATABASE_URI, echo=True)
 
     # 注册蓝图
     from .main import main
@@ -33,5 +36,8 @@ def create_app(config_name):
 
     from .dali import dali
     app.register_blueprint(dali)
+
+    from .admin import admin
+    app.register_blueprint(admin)
 
     return app

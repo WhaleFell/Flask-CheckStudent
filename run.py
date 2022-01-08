@@ -7,6 +7,7 @@
 import os
 from app import create_app
 import click  # 命令行参数库
+from sqlmodel import SQLModel
 
 # from app.models import User  # 数据库模型
 # 从环境变量读取
@@ -30,4 +31,5 @@ def deploy():
     #                     email='admin@admin.com', password="admin")
     #         db.session.add(user)
     #         db.session.commit()
+    SQLModel.metadata.create_all(app.config['engine'])
     click.echo('数据库初始化成功!')
